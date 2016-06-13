@@ -70,24 +70,24 @@ import auth.views
 app.register_blueprint(auth.views.app)
 
 
-# -------------------------------------------------------------
-# Development server setup
-# -------------------------------------------------------------
-
-if app.debug:
-    from werkzeug.debug import DebuggedApplication
-    app.wsgi_app = DebuggedApplication(app.wsgi_app, True)
-
-if __name__ == "__main__":
-    # for convenience in setting up OAuth ids and secretes we use the example.com domain.
-    # This should allow you to circumvent limits put on localhost/127.0.0.1 usage
-    # Just map dev.example.com on 127.0.0.1 ip address.
-    logging.debug("PRODUCTION: %s" % PRODUCTION)
-    logging.debug("app.debug: %s" % app.debug)
-    logging.debug("app.testing: %s" % app.testing)
-
-    # making your the server externally visible simplifies networking configuration
-    # for local vagrant based development
-    logging.warn("We're binding to all your ip addresses. Don't forget to map `dev.example.com` to one of them")
-    logging.warn("For more information see http://bit.ly/1xKtf8j")
-    app.run(host="0.0.0.0", port=5055)
+## -------------------------------------------------------------
+## Development server setup
+## -------------------------------------------------------------
+#
+#if app.debug:
+#    from werkzeug.debug import DebuggedApplication
+#    app.wsgi_app = DebuggedApplication(app.wsgi_app, True)
+#
+#if __name__ == "__main__":
+#    # for convenience in setting up OAuth ids and secretes we use the example.com domain.
+#    # This should allow you to circumvent limits put on localhost/127.0.0.1 usage
+#    # Just map dev.example.com on 127.0.0.1 ip address.
+#    logging.debug("PRODUCTION: %s" % PRODUCTION)
+#    logging.debug("app.debug: %s" % app.debug)
+#    logging.debug("app.testing: %s" % app.testing)
+#
+#    # making your the server externally visible simplifies networking configuration
+#    # for local vagrant based development
+#    logging.warn("We're binding to all your ip addresses. Don't forget to map `dev.example.com` to one of them")
+#    logging.warn("For more information see http://bit.ly/1xKtf8j")
+#    app.run(host="0.0.0.0", port=5055)
